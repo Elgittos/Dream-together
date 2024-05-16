@@ -23,18 +23,18 @@ if ($conn->connect_error) {
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
-    $dream = $_POST["dream"];
+    $comment = $_POST["comment"];
     $ip = $_SERVER['REMOTE_ADDR'];
  
     // Check if form data is not empty
-    if (!empty($name) && !empty($dream)) {
+    if (!empty($name) && !empty($comment)) {
         // Prepare and bind
-        $stmt = $conn->prepare("INSERT INTO dreams (name, dream, date, ip) VALUES (?, ?, NOW(), ?)");
+        $stmt = $conn->prepare("INSERT INTO dreams (name, comment, date, ip) VALUES (?, ?, NOW(), ?)");
         if ($stmt === false) {
             die("Prepare failed: (" . $conn->errno . ") " . $conn->error);
         }
         
-        $stmt->bind_param("sss", $name, $dream, $ip);
+        $stmt->bind_param("sss", $name, $comment, $ip);
 
         // Execute the statement
         if ($stmt->execute()) {
@@ -76,8 +76,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
                 <br><br>
-                <label for="dream">Dream:</label>
-                <textarea id="dream" name="dream" required></textarea>
+                <label for="comment">Dream:</label>
+                <textarea id="comment" name="comment" required></textarea>
                 <br><br>
                 <input type="submit" value="Submit">
             </form>
@@ -87,12 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Dreams Shared by Others:</h2>
             <?php
             // Display comments
-            $sql = "SELECT name, dream, date FROM dreams ORDER BY date DESC";
+            $sql = "SELECT name, comment, date FROM dreams ORDER BY date DESC";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["dream"]) . " <em>on " . $row["date"] . "</em></p>";
+                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["date"] . "</em></p>";
                 }
             } else {
                 echo "<p>No comments yet!</p>";
