@@ -18,10 +18,17 @@
     </header>
     <main>
         <div>
-            <img src="ressources/img/Picture1.jpg">
+            <img src="ressources/img/Picture1.jpg" alt="IMAGE">
             <video class="video" src="ressources/mp4/flames.mp4" autoplay muted loop></video>
             <h2>Om Brion Gyson's Dream Machine</h2>
         </div> 
+       
+        
+        <div>
+            <h2>Dreams Shared by Others:</h2>
+            <?php include 'dreams.php'; ?>
+        </div>
+
 
     </main>
     <footer></footer>
