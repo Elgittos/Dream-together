@@ -1,0 +1,110 @@
+/* style.css */
+body {
+    background: url('../img/Backgroundtest1small.png') center / cover no-repeat;
+    background-color: black;
+    height: 100vh;
+    background-attachment: fixed; /* Ensure the background stays in place while scrolling */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    padding: 10px; /* Lad os holde padding til 0 for nu*/
+    background-color: rgba(255, 69, 0, 0.6); /* Semi-transparent orange red background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make header fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header is on top */
+}
+
+header .logo {
+    width: 100px;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: rgb(6, 48, 110); /* Adjust the text color as needed */
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+    /*transform: translate(-50%, -50%) this is anotherway to write the samme command. Her er både x og y implicit og behøves ikke at skrives.*/
+}
+
+/*
+nav {
+    margin-left: auto; /* Push the nav to the right 
+}
+*/
+
+.nav-menu {
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 69, 0, 0.6); /* Transparent orange red background */
+    border-radius: 25px;
+    padding: 10px;
+    /*-webkit-backdrop-filter: blur(10px);*/
+   /* backdrop-filter: blur(10px);*/
+}
+
+.nav-menu li {
+    margin: 0 8px;
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: rgb(10, 41, 97);
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 1s, color 1s;   
+}
+
+.nav-menu a:hover {
+    color: orangered;
+    background-color: #082269; /* Background color on hover */
+    border-radius: 25px; /* Rounded corners on hover */
+}
+
+main { /* Er min main tag i index.php*/
+    width: 100%; /*Bestemmer hvor meget main boksen skal fylde i bredden, her vil jeg have den fylder hele siden så jeg sætter den til 100%.*/
+    /* max-width: 800px; /* Bestemmer at bredden af main boksen max må være 800 pixels bred (Den udkommenterer jeg for nu).*/
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    padding-top: 60px; /* Ensure enough padding at the top for the nav-menu */
+    border-radius: 10px;
+    margin-top: 140px; /* Denne regel siger at denne boks skal være 160 pixels fra toppen, jeg skifter den til 180 pixels så den ikke overlapper med header boksen */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+
+
+img, video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    /*margin-top: 0; /*Siger at der skal være 0 pixels margin fra toppen, hvilket flytter h2 overskriften helt øverst i boksen. Den slår jeg også lige fra for nu.*/
+    text-align: center;
+}

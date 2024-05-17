@@ -1,0 +1,142 @@
+/* dreams.css */
+body {
+    background: url('../img/Backgroundtest1small.png') center / cover no-repeat;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+header {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    padding: 10px; /* Lad os holde padding til 0 for nu*/
+    background-color: rgba(255, 69, 0, 0.6); /* Semi-transparent orange red background */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Make header fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure the header is on top */
+}
+header .logo {
+    width: 100px;
+    height: auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: rgb(6, 48, 110); /* Adjust the text color as needed */
+    position: absolute;
+    left: 40%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+    /*transform: translate(-50%, -50%) this is anotherway to write the samme command. Her er både x og y implicit og behøves ikke at skrives.*/
+}
+
+/*
+nav {
+    margin-left: auto; /* Push the nav to the right 
+}
+*/
+
+.nav-menu {
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 69, 0, 0.6); /* Transparent orange red background */
+    border-radius: 25px;
+    padding: 10px;
+    /*-webkit-backdrop-filter: blur(10px);*/
+   /* backdrop-filter: blur(10px);*/
+}
+
+.nav-menu li {
+    margin: 0 8px;
+    position: relative;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: rgb(10, 41, 97);
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background-color 1s, color 1s;   
+}
+
+.nav-menu a:hover {
+    color: orangered;
+    background-color: #082269; /* Background color on hover */
+    border-radius: 25px; /* Rounded corners on hover */
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 160px; /* Adjusted to account for the fixed header */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #ff4500;
+}
+
+h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+p {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}

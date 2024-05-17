@@ -8,26 +8,32 @@
 </head>
 <body>
     <header>
+
+        <div>
         <h1>Dream together</h1>
-        <img class="logo" src="ressources/img/Picture3.jpg">
-        <ul>
-            <li class="navbutton"><a href="index.html">Home</a></li>
-            <li class="navbutton"><a href="dreams.html">Dreams</a></li>
+            <img class="logo" src="ressources/img/Picture3.jpg">
+        </div>
+   <!-- <nav>-->
+        <ul class="nav-menu">
+            <li class="navbutton"><a href="index.php">Home</a></li>
+            <li class="navbutton"><a href="dreams.php">Dreams</a></li>
             <li class="navbutton"><a href="#">Dreams</a></li>
         </ul>
+    <!--</nav>-->
     </header>
     <main>
-        <div>
+        <h2>This is a second title</h2>
+        <!--<div>
             <img src="ressources/img/Picture1.jpg" alt="IMAGE">
             <video class="video" src="ressources/mp4/flames.mp4" autoplay muted loop></video>
             <h2>Om Brion Gyson's Dream Machine</h2>
-        </div> 
+        </div> -->
        
         
-        <div>
+        <!--<div>
             <h2>Dreams Shared by Others:</h2>
             <?php include 'dreams.php'; ?>
-        </div>
+        </div>-->
 
 
     </main>

@@ -1,16 +1,13 @@
 <?php
 require 'vendor/autoload.php'; // Include Composer's autoload file
 
-
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
 
 $servername = $_ENV['DB_SERVER'];
 $username = $_ENV['DB_USERNAME'];
 $password = $_ENV['DB_PASSWORD'];
 $dbname = $_ENV['DB_NAME'];
-
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname, 3306);
@@ -25,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $comment = $_POST["comment"];
     $ip = $_SERVER['REMOTE_ADDR'];
- 
+
     // Check if form data is not empty
     if (!empty($name) && !empty($comment)) {
         // Prepare and bind
@@ -33,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt === false) {
             die("Prepare failed: (" . $conn->errno . ") " . $conn->error);
         }
-        
+
         $stmt->bind_param("sss", $name, $comment, $ip);
 
         // Execute the statement
@@ -58,13 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreams</title>
-    <link href="ressources/css/style.css" rel="stylesheet" type="text/css">
+    <link href="ressources/css/dreams.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
-        <h1>Tell us about your dreams YOLOOOOOO</h1>
+        <h1>Tell us about your dreams</h1>
         <img class="logo" src="ressources/img/Picture3.jpg" alt="Logo">
-        <ul>
+        <ul class="nav-menu">
             <li class="navbutton"><a href="index.php">Home</a></li>
             <li class="navbutton"><a href="dreams.php">Dreams</a></li>
             <li class="navbutton"><a href="#">Dreams</a></li>
@@ -87,12 +84,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h2>Dreams Shared by Others:</h2>
             <?php
             // Display comments
-            $sql = "SELECT name, comment, date FROM dreams ORDER BY date DESC";
+            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date FROM dreams ORDER BY date DESC";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["date"] . "</em></p>";
+                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em></p>";
                 }
             } else {
                 echo "<p>No comments yet!</p>";
