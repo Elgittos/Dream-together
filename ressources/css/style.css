@@ -54,7 +54,7 @@ nav {
 .nav-menu {
     position: absolute;
     top: 5%;
-    right: 1%;
+    right: 2%;
     list-style: none;
     display: flex;
     margin: 0;
@@ -95,7 +95,7 @@ main { /* Er min main tag i index.php*/
     border-radius: 10px;
     margin-top: 140px; /* Denne regel siger at denne boks skal være 160 pixels fra toppen, jeg skifter den til 180 pixels så den ikke overlapper med header boksen */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-}box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+}
 
 
 img, video {

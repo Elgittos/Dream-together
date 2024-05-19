@@ -52,7 +52,7 @@ nav {
 .nav-menu {
     position: absolute;
     top: 5%;
-    right: 1%;
+    right: 2%;
     list-style: none;
     display: flex;
     margin: 0;
@@ -84,14 +84,15 @@ nav {
     border-radius: 25px; /* Rounded corners on hover */
 }
 
-main {
-    width: 80%;
-    max-width: 800px;
-    background-color: rgba(0, 0, 0, 0.6);
+main { /* Er min main tag i index.php*/
+    width: 100%; /*Bestemmer hvor meget main boksen skal fylde i bredden, her vil jeg have den fylder hele siden så jeg sætter den til 100%.*/
+    /* max-width: 800px; /* Bestemmer at bredden af main boksen max må være 800 pixels bred (Den udkommenterer jeg for nu).*/
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
+    padding-top: 60px; /* Ensure enough padding at the top for the nav-menu */
     border-radius: 10px;
-    margin-top: 160px; /* Adjusted to account for the fixed header */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    margin-top: 140px; /* Denne regel siger at denne boks skal være 160 pixels fra toppen, jeg skifter den til 180 pixels så den ikke overlapper med header boksen */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 form {
@@ -127,6 +128,10 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #ff4500;
+}
+
+.nightmares {
+    left: 0%;
 }
 
 h2 {
