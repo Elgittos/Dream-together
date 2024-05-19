@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </header>
     <main>
-        <div class="input">
+        <div class="yolo">
             <form action="dreams.php" method="post"><!-- The form tag creates an HTML form input, the action attribute tells which server side script will handle the form submission, in this case the dreams.php handles the form submision. The method attribute specifies which HTTP method to be used then sending form data, in this case I use POST because it sends the data as an HTTP request body, this makes it more suitable for sending large or sensitive information.-->
 
 
@@ -99,7 +99,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="dreambox">
         <div class="recurring">
-            <h2>Recurring Dreams Shared by Others:</h2>
+            <h2 onclick="toggleContent('recurring-content')">Recurring Dreams Shared by Others</h2>
+
+            <div id="recurring-content" class="content">
             <?php
             // Display comments
             $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
@@ -109,17 +111,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
-                }
-            } else {
-                echo "<p>No comments yet!</p>";
-            }
+                    echo "<div class='comment'>
+                    <div class='comment-header'>
+                        <span class='comment-name'>" . htmlspecialchars($row["name"]) . "</span>
+                        <span class='comment-type-recurring'>" . htmlspecialchars($row["typedream"]) . "</span>
+                    </div>
+                    <div class='comment-body'>
+                        <p>" . htmlspecialchars($row["comment"]) . "</p>
+                    </div>
+                    <div class='comment-footer'>
+                        <span class='comment-date'>" . htmlspecialchars($row["formatted_date"]) . "</span>
+                    </div>
+                </div>";
+        }
+    } else {
+        echo "<p>No comments yet!</p>";
+    }
+    ?>
+           </div> 
 
-            ?>
         </div> 
 
         <div class="Nightmare">
-            <h2>Nightmares Shared by Others:</h2>
+            <h2>Nightmares Shared by Others</h2>
             <?php
             // Display comments
             $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
@@ -130,7 +144,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                    echo "<div class='comment'>
+                    <div class='comment-header'>
+                        <span class='comment-name'>" . htmlspecialchars($row["name"]) . "</span>
+                        <span class='comment-type-nightmare'>" . htmlspecialchars($row["typedream"]) . "</span>
+                    </div>
+                    <div class='comment-body'>
+                        <p>" . htmlspecialchars($row["comment"]) . "</p>
+                    </div>
+                    <div class='comment-footer'>
+                        <span class='comment-date'>" . htmlspecialchars($row["formatted_date"]) . "</span>
+                    </div>
+                </div>";
                 }
             } else {
                 echo "<p>No comments yet!</p>";
@@ -141,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div class="lucid">
-            <h2>Lucid Dreams Shared by Others:</h2>
+            <h2>Lucid Dreams Shared by Others</h2>
             <?php
             // Display comments
             $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
@@ -152,7 +177,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                    echo "<div class='comment'>
+                    <div class='comment-header'>
+                        <span class='comment-name'>" . htmlspecialchars($row["name"]) . "</span>
+                        <span class='comment-type-lucid'>" . htmlspecialchars($row["typedream"]) . "</span>
+                    </div>
+                    <div class='comment-body'>
+                        <p>" . htmlspecialchars($row["comment"]) . "</p>
+                    </div>
+                    <div class='comment-footer'>
+                        <span class='comment-date'>" . htmlspecialchars($row["formatted_date"]) . "</span>
+                    </div>
+                </div>";
                 }
             } else {
                 echo "<p>No comments yet!</p>";
@@ -162,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div> 
 
         <div class="fantasy">
-            <h2>Fantasy Dreams Shared by Others:</h2>
+            <h2>Fantasy Dreams Shared by Others</h2>
             <?php
             // Display comments
             $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
@@ -173,7 +209,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
-                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                    echo "<div class='comment'>
+                    <div class='comment-header'>
+                        <span class='comment-name'>" . htmlspecialchars($row["name"]) . "</span>
+                        <span class='comment-type-fantasy'>" . htmlspecialchars($row["typedream"]) . "</span>
+                    </div>
+                    <div class='comment-body'>
+                        <p>" . htmlspecialchars($row["comment"]) . "</p>
+                    </div>
+                    <div class='comment-footer'>
+                        <span class='comment-date'>" . htmlspecialchars($row["formatted_date"]) . "</span>
+                    </div>
+                </div>";
                 }
             } else {
                 echo "<p>No comments yet!</p>";
@@ -190,5 +237,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     </main>
     <footer></footer>
+    
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
+
 </body>
 </html>

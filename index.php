@@ -30,10 +30,6 @@
         </div> -->
        
         
-        <!--<div>
-            <h2>Dreams Shared by Others:</h2>
-            <?php include 'dreams.php'; ?>
-        </div>-->
 
 
     </main>
