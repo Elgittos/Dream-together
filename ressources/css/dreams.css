@@ -43,12 +43,6 @@ header h1 {
     /*transform: translate(-50%, -50%) this is anotherway to write the samme command. Her er både x og y implicit og behøves ikke at skrives.*/
 }
 
-/*
-nav {
-    margin-left: auto; /* Push the nav to the right 
-}
-*/
-
 .nav-menu {
     position: absolute;
     top: 5%;
@@ -87,12 +81,24 @@ nav {
 main { /* Er min main tag i index.php*/
     width: 100%; /*Bestemmer hvor meget main boksen skal fylde i bredden, her vil jeg have den fylder hele siden så jeg sætter den til 100%.*/
     /* max-width: 800px; /* Bestemmer at bredden af main boksen max må være 800 pixels bred (Den udkommenterer jeg for nu).*/
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(32, 101, 192, 0.1);
     padding: 20px;
     padding-top: 60px; /* Ensure enough padding at the top for the nav-menu */
     border-radius: 10px;
-    margin-top: 140px; /* Denne regel siger at denne boks skal være 160 pixels fra toppen, jeg skifter den til 180 pixels så den ikke overlapper med header boksen */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+   margin-top: 140px; /* Denne regel siger at denne boks skal være 160 pixels fra toppen, jeg skifter den til 180 pixels så den ikke overlapper med header boksen */
+   display: grid;
+   place-items: center;
+   row-gap: 20px;
+   height: 100vh;
+}
+
+/*FORM BOX RULES*/ 
+.input {
+    width: 60%;
+    background-color: red;
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
 form {
@@ -130,8 +136,15 @@ form input[type="submit"]:hover {
     background-color: #ff4500;
 }
 
-.nightmares {
-    left: 0%;
+/*dream BOX RULES*/
+.dreambox {
+    gap: 20px;
+    display: grid;
+    background-color: red;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
 
 h2 {
@@ -140,8 +153,10 @@ h2 {
 }
 
 p {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgb(47, 0, 255);
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+

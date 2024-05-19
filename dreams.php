@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </header>
     <main>
-        <div>
+        <div class="input">
             <form action="dreams.php" method="post"><!-- The form tag creates an HTML form input, the action attribute tells which server side script will handle the form submission, in this case the dreams.php handles the form submision. The method attribute specifies which HTTP method to be used then sending form data, in this case I use POST because it sends the data as an HTTP request body, this makes it more suitable for sending large or sensitive information.-->
 
 
@@ -84,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <!--Her kommer den nye function der vil gøre det muligt for brugerne at vælge melle forskellige kategorier drømme-->
                 <label for="typedreams">Category:</label><br>
                 <select id="typedreams" name="typedreams" required><!--This tag creates a drobdown menu of which the option tags are the options contained within, in this case I have defined 4 options-->
+                    <option value="" disabled selected>Select a category</option> <!-- This option is disabled and selected by default -->
                     <option value="Nightmare">Nightmare</option><!--The value attribute of the option tag is what is send to the server script or logic, this value is what is going to be stored in the database-->
                     <option value="Lucid">Lucid</option>
                     <option value="Recurring">Recurring</option>
@@ -96,11 +97,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div> 
 
-        <div class="nightmares">
-            <h2>Dreams Shared by Others:</h2>
+    <div class="dreambox">
+        <div class="recurring">
+            <h2>Recurring Dreams Shared by Others:</h2>
             <?php
             // Display comments
-            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream FROM dreams ORDER BY date DESC";
+            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
+                    FROM dreams WHERE typedream = 'Recurring' 
+                    ORDER BY date DESC";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                }
+            } else {
+                echo "<p>No comments yet!</p>";
+            }
+
+            ?>
+        </div> 
+
+        <div class="Nightmare">
+            <h2>Nightmares Shared by Others:</h2>
+            <?php
+            // Display comments
+            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
+                    FROM dreams 
+                    WHERE typedream = 'Nightmare'
+                    ORDER BY date DESC";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                }
+            } else {
+                echo "<p>No comments yet!</p>";
+            }
+
+
+            ?>
+        </div>
+
+        <div class="lucid">
+            <h2>Lucid Dreams Shared by Others:</h2>
+            <?php
+            // Display comments
+            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
+                    FROM dreams 
+                    WHERE typedream = 'lucid'
+                    ORDER BY date DESC";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<p><strong>" . htmlspecialchars($row["name"]) . "</strong>: " . htmlspecialchars($row["comment"]) . " <em>on " . $row["formatted_date"] . "</em> <br> <strong>Type:</strong> " . htmlspecialchars($row["typedream"]) . "</p>";
+                }
+            } else {
+                echo "<p>No comments yet!</p>";
+            }
+
+            ?>
+        </div> 
+
+        <div class="fantasy">
+            <h2>Fantasy Dreams Shared by Others:</h2>
+            <?php
+            // Display comments
+            $sql = "SELECT name, comment, DATE_FORMAT(date, '%Y-%m-%d %H:%i:%s') as formatted_date, typedream 
+                    FROM dreams 
+                    WHERE typedream = 'fantasy'
+                    ORDER BY date DESC";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
@@ -112,8 +180,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             $conn->close();
+
             ?>
         </div> 
+
+
+    </div>
+
+    
     </main>
     <footer></footer>
 </body>
