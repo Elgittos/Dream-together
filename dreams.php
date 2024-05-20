@@ -68,6 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li class="navbutton"><a href="#">Dreams</a></li>
         </ul>
     </header>
+    <div class="dream-machine">
+        <h2>DREAM MACHINE</h2>
+    </div>
     <main>
         <div class="yolo">
             <form action="dreams.php" method="post"><!-- The form tag creates an HTML form input, the action attribute tells which server side script will handle the form submission, in this case the dreams.php handles the form submision. The method attribute specifies which HTTP method to be used then sending form data, in this case I use POST because it sends the data as an HTTP request body, this makes it more suitable for sending large or sensitive information.-->

@@ -8,21 +8,19 @@
 </head>
 <body>
     <header>
-
-        <div>
         <h1>Dream together</h1>
-            <img class="logo" src="ressources/img/Picture3.jpg">
-        </div>
-   <!-- <nav>-->
+        <img class="logo" src="ressources/img/Picture3.jpg">
         <ul class="nav-menu">
             <li class="navbutton"><a href="index.php">Home</a></li>
             <li class="navbutton"><a href="dreams.php">Dreams</a></li>
             <li class="navbutton"><a href="#">Dreams</a></li>
         </ul>
-    <!--</nav>-->
     </header>
+    <div class="dream-machine">
+        <h2>DREAM MACHINE</h2>
+    </div>
     <main>
-        <h2>This is a second title</h2>
+
         <!--<div>
             <img src="ressources/img/Picture1.jpg" alt="IMAGE">
             <video class="video" src="ressources/mp4/flames.mp4" autoplay muted loop></video>
@@ -30,6 +28,7 @@
         </div> -->
        
         
+
 
 
     </main>
