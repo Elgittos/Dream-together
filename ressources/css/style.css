@@ -1,5 +1,19 @@
+@font-face {
+    font-family: 'linearbeam';
+    src: url('../fonts/linear_beam/Linebeam.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ledlight';
+    src: url('../fonts/ledlight/LEDLIGHT.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
-    font-family: cursive;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -21,7 +35,7 @@ header {
     height: 150px;
     width: 100%;
     padding: 10px;
-    background-color: rgba(207, 66, 15, 0.9);
+    background-color: rgba(17, 16, 16, 0.39);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,8 +46,10 @@ header {
 }
 
 header .logo {
-    width: 100px;
-    height: auto;
+    height: 120px;
+    width: auto;
+    position: absolute;
+    left: 3%;
 }
 
 header h1 {
@@ -43,6 +59,11 @@ header h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+header h1 img {
+    height: 30px;
+    width: auto;
 }
 
 .nav-menu {
@@ -95,7 +116,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(233, 123, 33, 0.932);
+    background-color: rgba(3, 3, 3, 0.733);
     color: rgb(10, 72, 165);
     padding: 0px;
     box-shadow: 0px 25px 10px rgba(0, 0, 0, 0.274);
@@ -111,6 +132,11 @@ main {
     width: 75%;
 }
 
+.dream-machine h2 img {
+    height: 30px;
+    width: auto;
+}
+
 @keyframes moveBanner {
     0% {
         transform: translateX(100%);
@@ -120,139 +146,29 @@ main {
     }
 }
 
-.yolo {
-    width: 80%;
-    max-width: 800px;
-    background-color: rgba(230, 82, 14, 0.103);
-    margin: 120px auto 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 4px 8px rgba(247, 52, 17, 0.747);
-    box-sizing: border-box; /* Include padding in the element's total width and height */
+.text1 {
+    margin-top: 50px;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    color: white;
+.introduction, .fireplace, .dream-machine-info  {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: rgb(15, 15, 15);
 }
 
-form label {
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-weight: bold;
-    font-size: 20px;
+.introduction {
+    margin-top: 50px;
 }
 
-form input[type="text"],
-form textarea,
-form select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-    background-color: white;
-    color: black;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    font-family: inherit;
-}
-
-form input[type="submit"] {
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    background-color: #ff4500;
-    color: rgb(3, 6, 46);
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    align-self: center;
-}
-
-form input[type="submit"]:hover {
-    background-color: #ff4500;
-    transform: scale(1.35);
-}
-
-.dreambox {
-    display: grid;
-    gap: 20px;
-    background-color: rgba(11, 88, 175, 0.034);
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
-    margin: 0;
-    border: 0;
-    padding: 0;
-    width: 100%; /* Ensure dreambox takes full width */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
-}
-
-h2 {
-    margin-top: 0;
-    text-align: center;
-}
-
-.comment {
-    background-color: rgba(209, 83, 10, 0.137);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.comment-name {
-    font-weight: bold;
-}
-
-.comment-type-recurring,
-.comment-type-nightmare,
-.comment-type-lucid,
-.comment-type-fantasy {
-    border-radius: 20%;
-    padding: 10px;
+.italics {
     font-style: italic;
-    text-align: right;
+}
+figure img, .black-and-white {
+    max-width: 100%;
+    height: auto;
 }
 
-.comment-type-recurring {
-    background-color: rgb(214, 36, 214);
-}
-
-.comment-type-nightmare {
-    background-color: rgb(42, 16, 63);
-    color: red;
-}
-
-.comment-type-lucid {
-    background-color: rgb(175, 118, 11);
-}
-
-.comment-type-fantasy {
-    background-color: rgb(40, 192, 10);
-}
-
-.comment-body p {
-    margin: 0;
-    background-color: rgba(207, 110, 18, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 1px 4px 8px rgba(247, 52, 17, 0.747);
-}
-
-.comment-footer {
-    margin-top: 10px;
-    text-align: right;
+figure figcaption {
     font-size: 0.9em;
-    color: #aaa;
 }
 
 /* Media Queries */
@@ -265,7 +181,7 @@ h2 {
 
     .nav-menu {
         flex-direction: column;
-        top: 100%;
+        top: 20px;
         right: 0;
         background-color: rgba(255, 69, 0, 0.9);
     }
@@ -288,6 +204,7 @@ h2 {
 
     .dreambox {
         grid-template-columns: 1fr;
+        width: 100%;
     }
 }
 
@@ -297,7 +214,7 @@ h2 {
     }
 
     .nav-menu {
-        top: 100%;
+        top: 10px;
         right: 0;
         flex-direction: column;
         align-items: center;
@@ -320,3 +237,5 @@ h2 {
         font-size: 0.8em;
     }
 }
+
+
