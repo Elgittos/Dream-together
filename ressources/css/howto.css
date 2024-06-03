@@ -256,7 +256,7 @@ main {
         left: 0;
         transform: none;
         width: 100%;
-        margin: 0;
+        margin-bottom: 50px;
     }
 
 }
