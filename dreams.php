@@ -129,6 +129,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div> 
         </div>
     </main>
-    <footer></footer>
+    <footer>
+    <div class="logo">
+            <a href="https://fablab.ruc.dk/" target="_blank"><img src="ressources/img/fablablogo.png"></a>
+            <a href="https://www.roskilde-festival.dk/" target="_blank"><img src="ressources/img/rf24logo2.png"></a>
+            <a href="https://ruc.dk/" target="_blank"><img src="ressources/img/ruclogo.png"></a>
+        </div>
+        <div class="text">
+            <p>&copy; 2024 Dreamtogether.online. All rights reserved.</p>
+            <p>This site is part of the Dream Together project and not intended for commercial use.</p>
+            <p>Any content shared here is free for non-commercial purposes.</p>
+            <p>Contact: luis@dreamtogether.online</p>
+        </div>
+    </footer>
 </body>
 </html>

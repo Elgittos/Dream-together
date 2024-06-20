@@ -28,12 +28,12 @@
     <main>
 
     <div class="text1">
-        <h2>INTRODUCTION</h2>
         <figure>
             <img src="ressources/img/Brian-Gyson.png" class="brian-gyson">
             <figcaption>Brion Gysin (1916-1986) British-Canadian painter, writer, sound poet, performance artist and inventor of experimental devices. </figcaption>
         </figure>
         <div class="introduction">
+            <h2>INTRODUCTION</h2>
             <p>
             Inspired by the flickering lights of fire, embers pulsating, the starlit night sky, flames and shadows dancing over faces, and the stories told and shared by the bonfire, we wish to bring people together around our light installation at Roskilde Festival.<br><br>
             
@@ -71,6 +71,18 @@ The Dreamachine invites the user to immerse themselves in dreams and visions bro
 
 
     </main>
-    <footer></footer>
+    <footer>
+        <div class="logo">
+            <a href="https://fablab.ruc.dk/" target="_blank"><img src="ressources/img/fablablogo.png"></a>
+            <a href="https://www.roskilde-festival.dk/" target="_blank"><img src="ressources/img/rf24logo2.png"></a>
+            <a href="https://ruc.dk/" target="_blank"><img src="ressources/img/ruclogo.png"></a>
+        </div>
+        <div class="text">
+            <p>&copy; 2024 Dreamtogether.online. All rights reserved.</p>
+            <p>This site is part of the Dream Together project and not intended for commercial use.</p>
+            <p>Any content shared here is free for non-commercial purposes.</p>
+            <p>Contact: luis@dreamtogether.online</p>
+        </div>
+    </footer>
 </body>
 </html>

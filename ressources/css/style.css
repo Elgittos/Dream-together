@@ -35,7 +35,7 @@ header {
     height: 150px;
     width: 100%;
     padding: 10px;
-    background-color: rgba(17, 16, 16, 0.39);
+    background-color: rgba(17, 16, 16, 0.5);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,7 +74,7 @@ header h1 img {
     display: flex;
     margin: 0;
     padding: 10px;
-    background-color: rgba(255, 69, 0, 0.6);
+    background-color: rgba(255, 69, 0, 0.7);
     border-radius: 25px;
 }
 
@@ -97,21 +97,14 @@ header h1 img {
 }
 
 main {
-    width: 100%;
     background-color: rgba(32, 101, 192, 0.1);
-    padding: 20px;
-    padding-top: 100px; /* Ensure enough padding at the top for the header */
-    border-radius: 10px;
-    margin-top: 150px;
-    display: grid;
-    place-items: center;
-    row-gap: 20px;
-    box-sizing: border-box; /* Include padding in the element's total width and height */
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
 }
 
 .dream-machine {
-    position: fixed;
-    top: 180px;
+    margin-top: 200px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -146,8 +139,15 @@ main {
     }
 }
 
+.text1 figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 .text1 {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .introduction, .fireplace, .dream-machine-info  {
@@ -238,4 +238,39 @@ figure figcaption {
     }
 }
 
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    opacity: 0.7;
+}
 
+footer .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+footer .logo a {
+    flex: 0 1 100px;
+}
+
+footer .logo a img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+
+footer .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .text p {
+    justify-content: center;
+    align-items: center;
+}
