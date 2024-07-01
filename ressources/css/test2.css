@@ -1,0 +1,795 @@
+/* CSS Reset to Avoid Unexpected Margins and Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../img/Backgroundtest1small.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/*RULES FOR THE GRID CONTAINERS*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0px;
+}
+
+/*RULES FOR THE HEADER*/
+header {
+    /*background-image: url(../img/flame1.jpg);*/
+    padding: 10px 10px;
+    background-color: rgba(0, 0, 0, 0.411);
+}
+
+/*RULES FOR LOGO AND NAVIGATION*/
+/*NAVIGATION*/
+header .nav-menu {
+    grid-column: 1 / span 12;
+    list-style: none;
+    padding: 10px 0px;
+    background-color: rgba(255, 68, 0, 0.897);
+    border-radius: 16px;
+    align-self: start;
+    justify-self: end;
+    position: fixed;
+}
+
+header .nav-menu a {
+    font-size: 1rem;
+    text-decoration: none;
+    margin-left: 0px;
+    color: rgb(10, 41, 97);
+    transition: color 1s;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.fixed .nav-menu a:hover {
+    color: orangered;
+    background-color: #082269;
+}
+
+/*RULES FOR THE MAIN TITLE*/
+header .head {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;  
+    margin-top: 100px;
+}
+
+/*FIGURE*/
+header .logo {
+    grid-column: 1 / span 2;
+    justify-self: start;
+    align-self: center;
+    margin: 10px;
+}
+
+header figure img {
+    height: auto;
+    width: 30%;
+}
+
+/*TITLE*/
+header .main-title {
+    grid-column: 3 / span 8;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+header .main-title img {
+    height: auto;
+    width: 40%;
+}
+
+/*RULES FOR THE MAIN CONTENT*/
+main {
+    width: 100%;
+}
+
+/*RULES FOR MOVING BANNER*/
+main .moving-banner-container {
+    grid-column: 1 / span 12;
+    background-color: rgba(0, 0, 0, 0.411);
+    overflow: hidden;
+    box-shadow: 5px 10px 15px rgba(247, 52, 17, 0.856);
+    padding: 20px;
+    margin: 0px 0;
+}
+
+main .moving-banner-container .moving-banner {
+    animation: moveBanner 8s linear infinite;
+    height: auto;
+}
+
+main .moving-banner-container .moving-banner img {
+    height: 50px;
+    width: auto;
+}
+
+@keyframes moveBanner {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/*RULES FOR HERO SECTION*/
+main .hero-section {
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    background-color: #fb7c3221;
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    color: rgb(255, 240, 225);
+}
+
+main .hero-section figure {
+    grid-column: 1 / span 6;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: rgba(16, 12, 70, 0);
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    min-width: 200px;
+    max-width: 500px;
+    align-self: start;
+    justify-self: center;
+    width: 100%;
+    margin: 50px 20px;
+}
+
+main .hero-section .hero-img {
+    width: 100%;
+    height: auto;
+}
+
+/*RULES FOR THE INTRODUCTION*/
+main .introduction {
+    grid-column: 7 / span 6;
+    justify-self: center;
+    align-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(8, 4, 46, 0.829);
+    margin: 50px 20px;
+    line-height: 1.7;
+}
+
+main .introduction h2 {
+    font-size: 2.441rem;
+    margin: 40px auto;
+    justify-content: center;
+    text-align: center;
+}
+
+main .introduction h3 {
+    font-size: 1.563rem;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 70ch;
+    text-align: center;
+}
+
+main .introduction h4 {
+    font-size: 1.25rem;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 65ch;
+    text-align: center;
+}
+
+main .introduction p {
+    font-size: 1.25rem;
+    max-width: 75ch;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-wrap: balance;   
+}
+
+main .introduction p span {
+    font-weight: bold;
+}
+
+main .warning {
+    font-size: 1.25rem;
+    font-weight: bold;
+    max-width: 75ch;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: rgba(182, 27, 0, 0.527);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+@media (max-width: 960px) {
+    main .hero-section {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+    }
+
+    main .hero-section figure {
+        grid-column: 1 / span 12;
+        margin: 30px 0;
+    }
+
+    main .introduction {
+        grid-column: 1 / span 12;
+        margin: 30px 0;
+    }
+}
+
+/*RULES FOR HOW TO SECTION*/
+main .howto {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;
+    justify-self: center;
+    background-color: rgba(0, 11, 160, 0.274);
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    width: 100%;
+    color: white;
+    padding: 20px;  
+    line-height: 1.7;
+}
+
+main .instructions {
+    grid-column: 1 / span 6;
+    justify-self: center;
+    padding: 20px;
+    background-color: rgba(8, 4, 46, 0.842);
+    border-radius: 20px;
+    margin: 50px 20px;
+}
+
+main .howto h2 {
+    font-size: 2.441rem;
+    margin: 40px auto;
+    text-align: center;
+}
+
+main .howto h3 {
+    font-size: 1.563rem;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 70ch;
+    text-align: center;
+}
+
+main .howto ol {
+    padding: 10px; /* Add padding to the left to create space for numbers */
+    list-style-position: inside; /* Ensure list numbers are inside the content box */
+} 
+
+main .howto ol li {
+    font-size: 1.25rem;
+    max-width: 80ch;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-wrap: balance;
+    text-align: center;
+}
+
+li::marker {
+    font-size: 1.4em;
+}
+
+main .howto span {
+    font-weight: bold;
+}
+
+main .howto-figure {
+    grid-column: 7 / span 6;
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+
+main .howto-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 960px) {
+    main .howto {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+    }
+
+    main .instructions {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+
+    main .howto-figure {
+        grid-column:  1 / span 12;
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+        margin: 40px 0;
+    }
+}
+
+/*RULES FOR INFO SECTION*/
+main .info-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;
+    gap: 15px;
+    justify-self: center;
+    background-color: #ea32fb21;
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    width: 100%;
+    color: white;
+}
+
+/*INFO*/
+main .info {
+    grid-column: 1 / span 6;
+    justify-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(8, 4, 46, 0.842);
+    margin: 50px 20px;
+    line-height: 1.7;
+}
+
+main .info h3 {
+    font-size: 1.563rem;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 75ch;
+    text-align: center;
+}
+
+main .info p {
+    font-size: 1.25rem;
+    max-width: 75ch;
+    margin-bottom: 50px;
+    text-wrap: balance; 
+}
+
+main .question {
+    font-size: 1.25rem;
+    font-weight: bold;
+    max-width: 75ch;
+}
+
+main .yolo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    max-width: 75ch;
+
+}
+
+/*BONFIRE*/
+main .bonfire {
+    grid-column: 7 / span 6;
+    justify-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(6, 2, 37, 0.89);
+    margin: 50px 20px;
+    line-height: 1.7;
+}
+
+main .bonfire h3 {
+    font-size: 1.563rem;
+    /*line-height: 1.6;*/
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 75ch;
+    text-align: center;
+}
+
+main .bonfire p {
+    font-size: 1.25rem;
+    /*line-height: 1.6;*/
+    max-width: 75ch;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    text-wrap: balance;  
+}
+
+@media (max-width: 960px) {
+    main .info-section {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+    }
+
+    main .info {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+
+    main .bonfire {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+}
+
+/*BRAIN GYSON*/
+main .gyson {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;
+    gap: 15px;
+    justify-self: center;
+    background-color: rgba(0, 29, 160, 0.397);
+    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
+    width: 100%;
+    line-height: 1.7;
+    color: white;
+}
+
+/*FIGURE*/
+main figure {
+    grid-column: 1 / span 6;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgba(8, 4, 46, 0.842);
+    min-width: 200px;
+    max-width: 650px;
+    align-self: start; /* Align the figure to the start of the grid row */
+    justify-self: center;
+    margin: 50px 20px;
+}
+
+main figure img {
+    width: 100%;
+    height: auto;
+}
+
+main figure figcaption {
+    line-height: 1.6;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/*DREAMACHINE*/
+main .dreamachine {
+    grid-column: 7 / span 6;
+    justify-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(8, 4, 46, 0.842);
+    margin: 50px 20px;
+}
+
+main .dreamachine h3 {
+    font-size: 1.563rem;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    max-width: 75ch;
+    text-align: center;
+}
+
+main .dreamachine p {
+    font-size: 1.25rem;
+    max-width: 75ch;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-wrap: balance;  
+}
+
+main .dreamachine span {
+    font-style: italic;
+}
+
+@media (max-width: 960px) {
+    main .gyson {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+    }
+
+    main figure {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+
+    main .dreamachine {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+}
+
+/*RULES FOR THE PROCESS*/
+main .the-process {
+    grid-column: 1 / span 12;
+    justify-self: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.781);  
+    color: white; 
+    width: 100%;
+}
+
+main .gallery {
+    grid-column: 1 / span 12;
+    justify-self: center;
+    padding: 20px;
+    background-color: black;  
+    color: white; 
+    width: 100%;
+}
+ /*SHARE*/
+main .god-div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;
+    /*box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);*/
+    background-color: #fb7c3221;
+}
+main .share {
+    grid-column: 1 / span 6;
+    justify-self: center;
+    padding: 20px;
+    border-radius: 20px;
+    color: white;
+    background-color: rgba(8, 4, 46, 0.781);
+    line-height: 1.7;
+    margin: 50px 20px;
+}
+
+main .share h2 {
+    font-size: 2.441rem;
+    margin: 40px auto;
+    justify-content: center;
+    text-align: center;
+}
+
+main .share h3 {
+    font-size: 1.563rem;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    max-width: 75ch;
+    text-align: center;
+}
+
+main .share p {
+    font-size: 1.25rem;
+    max-width: 75ch;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-wrap: balance;  
+}
+
+/*RULES FOR THE FORM*/
+main .form-container {
+    grid-column: 7 / span 6;
+    background-color: rgba(9, 5, 43, 0);
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+}
+main .formen {
+    padding: 20px;
+    max-width: 800px;
+    background-color: #0100479a;
+    border-radius: 10px;
+    box-shadow: 1px 8px 8px rgba(247, 52, 17, 0.829);
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+    margin: 50px 20px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+}
+
+main form label {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.563rem;
+}
+
+main form input[type="text"],
+main form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    background-color: white;
+    color: black;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+main form input[type="submit"] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4500;
+    color: rgb(3, 6, 46);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    align-self: center;
+}
+
+main form input[type="submit"]:hover {
+    background-color: #ff4500;
+    transform: scale(1.35);
+}
+
+@media (max-width: 960px) {
+    main .god-div {
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0;
+    }
+
+    main .share {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+    }
+
+    main .form-container {
+        grid-column: 1 / span 12;
+        justify-self: center;
+        margin: 30px 0;
+        width: 100%;
+    }
+}
+
+/*RULES FOR THE COMMENTS SECTION*/
+main .yo {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: 1 / span 12;
+    text-align: center; 
+    background-color: #fb7c3221;
+    width: 100%;
+    color: rgb(223, 223, 223);
+}
+
+main .comments {
+    grid-column: 1 / span 12;
+    justify-self: center;
+    padding: 20px;
+    /*background-image: url(../img/Backgroundtest1small.png);
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}   
+
+main .comments h2 {
+    margin-top: 0;
+    font-size: 1.953rem;
+    text-align: center;
+}
+
+main .comment {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px 20px;
+    box-shadow: 1px 8px 8px rgba(247, 52, 17, 0.829);
+    background-color: #0203496c;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+main .comment-header {
+    font-size: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+main .comment-name {
+    font-weight: bold;
+}
+
+
+main .comment-body p {
+    margin: 0;
+    background-color: rgb(224, 224, 224);
+    color: rgb(34, 34, 34);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.637);
+    max-width: 90ch;
+}
+
+main .comment-footer {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/*RULES FOR THE FOOTER*/
+/*CREDITS*/
+footer .credits h2 {
+    font-size: 1.563rem;
+    text-align: center;
+    margin: 20px 0;
+}
+
+footer .credits {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .credits p {
+    margin-bottom: 20px;
+}
+
+footer .credits p span {
+    font-weight: bold;
+}
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    box-shadow: 5px -10px 15px 5px rgba(247, 52, 17, 0.856);
+    opacity: 0.9;
+}
+
+footer .logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0px;
+}
+
+footer .logo a {
+    flex: 0 1 100px;
+}
+
+footer .logo a img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10%;
+}
+
+footer .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 960px) {
+
+}
+
+@media (max-width: 480px) {
+}
+
+
+
+
