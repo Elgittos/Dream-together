@@ -11,6 +11,7 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     background-attachment: fixed;
+    background-color: black;
 }
 
 /*RULES FOR THE GRID CONTAINERS*/
@@ -56,12 +57,14 @@ header .nav-menu a {
     background-color: #082269;
 }
 
+
 /*RULES FOR THE MAIN TITLE*/
 header .head {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1 / span 12;  
     margin-top: 100px;
+    max-width: 100%;
 }
 
 /*FIGURE*/
@@ -70,25 +73,27 @@ header .logo {
     justify-self: start;
     align-self: center;
     margin: 10px;
+    max-width: 100px;
 }
 
 header figure img {
+    width: 100%;
     height: auto;
-    width: 30%;
 }
 
 /*TITLE*/
 header .main-title {
     grid-column: 3 / span 8;
-    display: flex;
-    justify-content: center;
+    justify-self: center;
     align-self: center;
+    max-width: 500px;
 }
 
 header .main-title img {
     height: auto;
-    width: 40%;
+    width: 100%;
 }
+
 
 /*RULES FOR THE MAIN CONTENT*/
 main {
@@ -135,6 +140,7 @@ main .hero-section {
     color: rgb(255, 240, 225);
 }
 
+/*
 main .hero-section figure {
     grid-column: 1 / span 6;
     overflow: hidden;
@@ -153,10 +159,11 @@ main .hero-section .hero-img {
     width: 100%;
     height: auto;
 }
+*/
 
 /*RULES FOR THE INTRODUCTION*/
 main .introduction {
-    grid-column: 7 / span 6;
+    grid-column: 1 / span 12;
     justify-self: center;
     align-self: center;
     padding: 20px;
@@ -237,10 +244,8 @@ main .howto {
     grid-column: 1 / span 12;
     justify-self: center;
     background-color: rgba(0, 11, 160, 0.274);
-    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
     width: 100%;
-    color: white;
-    padding: 20px;  
+    color: white; 
     line-height: 1.7;
 }
 
@@ -432,7 +437,6 @@ main .gyson {
     gap: 15px;
     justify-self: center;
     background-color: rgba(0, 29, 160, 0.397);
-    box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);
     width: 100%;
     line-height: 1.7;
     color: white;
@@ -535,11 +539,12 @@ main .god-div {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column: 1 / span 12;
+    grid-row: 2 / span 1;
     /*box-shadow: 5px 10px 15px 5px rgba(247, 52, 17, 0.856);*/
     background-color: #fb7c3221;
 }
 main .share {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 12;
     justify-self: center;
     padding: 20px;
     border-radius: 20px;
@@ -574,11 +579,13 @@ main .share p {
 
 /*RULES FOR THE FORM*/
 main .form-container {
-    grid-column: 7 / span 6;
+    grid-column: 1 / span 12;
     background-color: rgba(9, 5, 43, 0);
     justify-self: center;
     align-self: center;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 main .formen {
     padding: 20px;
@@ -588,6 +595,8 @@ main .formen {
     box-shadow: 1px 8px 8px rgba(247, 52, 17, 0.829);
     box-sizing: border-box; /* Include padding in the element's total width and height */
     margin: 50px 20px;
+    width: 100%;
+
 }
 
 main form {
@@ -662,12 +671,12 @@ main .yo {
     background-color: #fb7c3221;
     width: 100%;
     color: rgb(223, 223, 223);
+    margin: 80px 0;
 }
 
 main .comments {
     grid-column: 1 / span 12;
     justify-self: center;
-    padding: 20px;
     /*background-image: url(../img/Backgroundtest1small.png);
     background-size: cover;
     background-repeat: no-repeat;*/
@@ -682,8 +691,7 @@ main .comments h2 {
 main .comment {
     padding: 10px;
     border-radius: 5px;
-    margin: 20px 20px;
-    box-shadow: 1px 8px 8px rgba(247, 52, 17, 0.829);
+    margin: 20px 0;
     background-color: #0203496c;
     font-size: 1rem;
     line-height: 1.7;
@@ -744,6 +752,11 @@ footer .credits p span {
     font-weight: bold;
 }
 
+@media (max-width: 960px) {
+    main .comment {
+        margin: 20px 0;
+    }
+}
 /*FOOTER*/
 footer {
     width: 100%;
@@ -751,6 +764,7 @@ footer {
     color: white;
     box-shadow: 5px -10px 15px 5px rgba(247, 52, 17, 0.856);
     opacity: 0.9;
+    padding: 6px;
 }
 
 footer .logo {
@@ -789,7 +803,3 @@ footer .text p {
 
 @media (max-width: 480px) {
 }
-
-
-
-

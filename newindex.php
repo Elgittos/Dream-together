@@ -57,16 +57,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Together</title>
-    <link href="ressources/css/test2.css" rel="stylesheet" type="text/css">
+    <link href="ressources/css/newindex.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header class="grid-container">  
         <div class="nav-menu">
-            <nav> 
-                <a href="#start">Start</a>
+            <nav>
+            <a href="#share">Share</a> 
+                <a href="#start">Welcome</a>
                 <a href="#how-to">How-to</a>
                 <a href="#info">Info</a>
-                <a href="#share">Experiences</a>
+                <a href="#experiences">Experiences</a>
             </nav>
         </div>
         <div class="head">
@@ -87,9 +88,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
         <div id="start" class="hero-section">
-            <figure>
+            <!--<figure>
                 <img src="ressources/img/Enhanced_Picture3.jpg" class="hero-img">
-            </figure>
+            </figure>-->
             <div class="introduction">
                 <h2>
                     Welcome to Dream Together Online
@@ -208,7 +209,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         echo "<p style='color: red;'>$error_message</p>";
                     }
                     ?>
-                    <form action="dreams.php" method="post">
+                    <form action="index.php" method="post">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" placeholder="Enter your name here" required><br><br>
                         <label for="comment">What did you experience?</label>
@@ -218,7 +219,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div> 
             </div>
         </div>
-        <div class="yo">
+        <div id="experiences" class="yo">
             <div class="comments">
                 <h2>Experiences Shared by Others</h2>
 
